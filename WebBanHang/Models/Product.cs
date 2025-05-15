@@ -10,6 +10,7 @@ namespace WebBanHang.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
+        [Range(1, 5000)]
         public int CategoryId { get; set; }
         //khai báo mối kết hợp 1-n
         [ForeignKey("CategoryId")]

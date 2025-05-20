@@ -1,0 +1,8 @@
+﻿@model Product
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <h4> Bạn có đồng ý xóa sản phẩm = @Model.Name</h4>
+    <button type="submit" class="btn btn-danger">Đồng ý </button>
+    <a asp-action="Index" class="btn btn-warning"> Cancel</a>
+</form>

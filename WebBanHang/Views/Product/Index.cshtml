@@ -1,21 +1,7 @@
 ﻿@model List<Product>
 
-@if(TempData["success"]!=null)
-            {
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                <script>
-                   swal.fire("Them thanh cong");
-                </script>
-            }
 
-@if (TempData["error"] != null)
-{
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        swal.fire("Xoa thanh cong");
-    </script>
-}
-
+<partial name="_Notification" />
 <div class="row mb-4">
     <div class="col-md-10">
         <h2>LIST PRODUCT</h2>

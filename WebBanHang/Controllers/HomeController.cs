@@ -31,7 +31,12 @@ namespace WebBanHang.Controllers
         {
             var pageSize = 3;
             var dsSanPham = _db.Products.ToList();
-            return PartialView("_ProductPartial",dsSanPham.Skip((page - 1) * pageSize).Take(pageSize).ToList());
+            var products = dsSanPham.Skip((page - 1) * pageSize).Take(pageSize).ToList();
+            if (products == null || products.Count == 0)
+            {
+                return Content("");
+            }
+            return PartialView("_ProductPartial", products);
         }
 
         public IActionResult Privacy()

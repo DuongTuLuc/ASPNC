@@ -17,23 +17,25 @@
 
 @section Scripts {
     <script>
-            let currentPage = 2;
-            $("#btnLoadMore").click(function () {
-           loadPage(currentPage);
-        currentPage++;                 
-            });
+        let currentPage = 2;
 
-            let loadPage= (page) =>{
-                $.ajax({
-                    url: "/Home/LoadMore",
-                    data: { page: page },
-                    success: function (data) {
-                        if ($.trim(data) === '') 
-                            $("#btnLoadMore").hide();
-                       else
-                       $(".products").append(data);
-                       }    
-                });
-            }
+        $("#btnLoadMore").click(function () {
+            loadPage(currentPage);
+            currentPage++;
+        });
+
+        let loadPage = (page) => {
+            $.ajax({
+                url: "/Home/LoadMore",
+                data: { page: page },
+                success: function (data) {
+                    if (!data || data.trim() === "") {
+                        $("#btnLoadMore").hide();
+                    } else {
+                        $(".products").append(data);
+                    }
+                }
+            });
+        }
     </script>
 }

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WebBanHang.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace WebBanHang
 {
@@ -28,6 +29,7 @@ namespace WebBanHang
             services.AddControllersWithViews();
             services.AddDbContext<ApplicationDbContext>(
             options => options.UseSqlServer("name=TestDB"));
+            services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ApplicationDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,14 +49,16 @@ namespace WebBanHang
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
+                    );
+                endpoints.MapRazorPages();
             });
         }
     }

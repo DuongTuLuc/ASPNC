@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34031.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuAnLamQuen", "DuAnLamQuen\DuAnLamQuen.csproj", "{89F3F7C4-53EA-4386-946F-9D0EFCCCF236}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DuAnLamQuen", "DuAnLamQuen\DuAnLamQuen.csproj", "{89F3F7C4-53EA-4386-946F-9D0EFCCCF236}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBanHang", "WebBanHang\WebBanHang.csproj", "{E4B0FDD7-FDED-4D19-A565-BF94CC30858D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebBanHang", "WebBanHang\WebBanHang.csproj", "{E4B0FDD7-FDED-4D19-A565-BF94CC30858D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

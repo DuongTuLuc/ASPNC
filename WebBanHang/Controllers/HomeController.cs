@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace WebBanHang.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private ApplicationDbContext _db;
+        
 
         public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
         {

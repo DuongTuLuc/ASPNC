@@ -33,6 +33,7 @@ namespace WebBanHang
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders(); 
             services.AddRazorPages();
             services.AddScoped<IEmailSender, EmailSender>();
+            services.AddSession();
 
             services.ConfigureApplicationCookie(options => {
                 options.LoginPath = "/Identity/Account/Login";
@@ -59,6 +60,7 @@ namespace WebBanHang
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

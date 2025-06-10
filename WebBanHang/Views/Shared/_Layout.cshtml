@@ -36,11 +36,18 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="Admin" asp-controller="Category" asp-action="Index">Manage Category</a>
                             </li>
-                            @*<li class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="Admin" asp-controller="Order" asp-action="Index">Manage Order</a>
-                            </li>*@
+                            </li>
                         }
                     </ul>
+                    <form asp-action="Index" asp-controller="Cart" class="d-flex">
+                        <button class="btn btn-outline-light" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            Cart
+                            <span class="showcart badge bg-light text-black ms-1 rounded-pill">0</span>
+                        </button>
+                    </form>
                     <partial name="_LoginPartial" />
                 </div>
             </div>
@@ -51,6 +58,7 @@
             @RenderBody()
         </main>
     </div>
+   
 
     <footer class="border-top footer text-muted">
         <div class="container">
@@ -59,6 +67,7 @@
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

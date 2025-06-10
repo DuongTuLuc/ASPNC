@@ -37,7 +37,7 @@ namespace WebBanHang.Areas.Admin.Controllers
 
         public IActionResult Index(int page = 1) //Đây là action method được gọi khi người dùng truy cập trang sản phẩm.
         {
-            int pageSize = 4; //Quy định số sản phẩm hiển thị trên mỗi trang. Ở đây là 4 sản phẩm/trang.
+            int pageSize = 5; //Quy định số sản phẩm hiển thị trên mỗi trang. Ở đây là 4 sản phẩm/trang.
             var dsSanPham = _db.Products.Include(x => x.Category).ToList(); //Truy vấn toàn bộ bảng Products từ cơ sở dữ liệu (Entity Framework).
             int totalItems = dsSanPham.Count; //Đếm tổng số sản phẩm hiện có trong danh sách (totalItems).
             int totalPages = (int)Math.Ceiling((double)totalItems / pageSize); //Tính tổng số trang cần hiển thị.

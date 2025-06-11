@@ -25,9 +25,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="Customer" asp-controller="Product" asp-action="Index">Products</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Customer" asp-controller="News" asp-action="Index">News</a>
-                        </li>
+                       
                         @if (User.IsInRole(SD.Role_Admin))
                         {
                             <li class="nav-item">
@@ -36,9 +34,7 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="Admin" asp-controller="Category" asp-action="Index">Manage Category</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Order" asp-action="Index">Manage Order</a>
-                            </li>
+                            
                         }
                     </ul>
                     <form asp-action="Index" asp-controller="Cart" class="d-flex">

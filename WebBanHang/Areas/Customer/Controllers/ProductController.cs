@@ -15,7 +15,7 @@ namespace WebBanHang.Areas.Customer.Controllers
         }
         public IActionResult Index(int catid = 1)
         {
-            var dsLoai = _db.Categories.Select(c => new CategoryViewModel
+            var dsLoai = _db.Categories.OrderBy(x=> x.DisplayOrder).Select(c => new CategoryViewModel
             {
                 Id = c.Id,
                 Name = c.Name,

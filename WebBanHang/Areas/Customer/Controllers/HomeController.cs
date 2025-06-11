@@ -32,7 +32,7 @@ namespace WebBanHang.Areas.Customer.Controllers
 
         public IActionResult LoadMore(int page = 1)
         {
-            var pageSize = 3;
+            var pageSize = 4;
             var dsSanPham = _db.Products.ToList();
             var products = dsSanPham.Skip((page - 1) * pageSize).Take(pageSize).ToList();
             if (products == null || products.Count == 0)

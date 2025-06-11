@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using WebBanHang.Areas.Customer.Models;
 using WebBanHang.Models;
@@ -6,6 +7,7 @@ using WebBanHang.Models;
 namespace WebBanHang.Areas.Customer.Controllers
 {
     [Area("Customer")]
+    [Authorize]
     public class OrderController : Controller
     {
         private readonly ApplicationDbContext _db;
